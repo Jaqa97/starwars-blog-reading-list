@@ -8,10 +8,12 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { characters } from "./views/characters";
 import { DetalleCharacters } from "./views/DetalleCharacters";
+import { planets } from "./views/planets"
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 import { Characters } from "./views/characters";
+import { Planets } from "./views/planets"
 
 //create your first component
 const Layout = () => {
@@ -30,6 +32,7 @@ const Layout = () => {
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="/characters" element={<Characters />} />
 						<Route path="/detalle/characters/:id" element={<DetalleCharacters />} />
+						<Route path="/planets" element={<Planets />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />

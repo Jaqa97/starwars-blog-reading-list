@@ -25,8 +25,8 @@ export const Navbar = () => {
 						</Link>
 					</li>		
 					<li class="nav-item ms-4">
-						<Link class="nav-link active fs-4 text-warning" to="/locations">
-							Locations
+						<Link class="nav-link active fs-4 text-warning" to="/planets">
+							Planets
 						</Link>
 					</li>	
 				</ul>
