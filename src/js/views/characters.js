@@ -6,17 +6,24 @@ import {Context} from "../store/appContext"
 
 
 export const Characters = () => {
-
-    const {store, actions} = useContext(Context);
-    return <div className="container text-center ">
-        <h1 className="text-light border-bottom border-warning rounded-pill p-1">Discover all Star Wars Characters!</h1>
-        <div className="row">
-            {store.people.map((objeto, index)=>{
-                return <Cardcharacter titulo = {objeto.name} />
-            })}
-            
-        </div>
-    </div>
-    
-};
+    const { store } = useContext(Context);
   
+    return (
+      <div className="container text-center">
+        <h1 className="text-light border-bottom border-warning rounded-pill p-1">
+          Discover all Star Wars Characters!
+        </h1>
+        <div className="row">
+          {store.people.map((elm, index) => (
+            <Cardcharacter
+              titulo={elm.name}
+              id={elm.uid}
+              ruta={"/detalle/characters/" + elm.uid}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  };
+  
+

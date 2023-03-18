@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
     store: {
       planetas: [],
       people: [],
+      favoritos: [],
       demo: [
         {
           title: "FIRST",
@@ -17,6 +18,16 @@ const getState = ({ getStore, getActions, setStore }) => {
       ],
     },
     actions: {
+      addFav: (name, id)=>{
+        const store = getStore();
+        console.log("elm a fav", name)
+        setStore({favoritos:[...store.favoritos, {name,id}]})
+
+      },
+      deleteFav: (index)=>{
+        const store = getStore();
+        setStore({favoritos:[...store.favoritos.filter((fav)=>fav.id !== index)]})
+      },
       getPeople: ()=>{
         fetch("https://www.swapi.tech/api/people").then(response=>response.json())
         .then(data => setStore({people: data.results}))
